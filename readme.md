@@ -1,8 +1,14 @@
 ## Alpine base image patched version of official alpine image
 
+Image architecture: `amd64`, `arm/v7`, `arm64`
+
 ### How to build
 
 ```make build```
+
+or multi arch build:
+
+```make multiarch```
 
 
 ## Trivi scan

@@ -1,5 +1,5 @@
 IMAGE_NAME=lapierre/alpine
-IMAGE_VERSION=3.12.3
+IMAGE_VERSION=3.13.3
 
 build:
 	docker build -t $(IMAGE_NAME):$(IMAGE_VERSION) .
@@ -12,5 +12,7 @@ push:
 	docker push $(IMAGE_NAME):3
 
 multiarch:
-	docker buildx build --push --pull --platform=linux/arm/v7,linux/arm64/v8,linux/amd64 -t $(IMAGE_NAME):$(IMAGE_VERSION) .
-	docker pull $(IMAGE_NAME):$(IMAGE_VERSION)
+	docker buildx build --push --pull --platform=linux/arm/v7,linux/arm64/v8,linux/amd64 -t $(IMAGE_NAME):3 .
+	docker pull $(IMAGE_NAME):3
+	docker tag $(IMAGE_NAME):3 $(IMAGE_NAME):$(IMAGE_VERSION)
+	docker push $(IMAGE_NAME):$(IMAGE_VERSION)
