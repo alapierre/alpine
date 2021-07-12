@@ -1,8 +1,8 @@
 IMAGE_NAME=lapierre/alpine
-IMAGE_VERSION=3.13.5
+IMAGE_VERSION=3.14.0
 
 build:
-	docker build -t $(IMAGE_NAME):$(IMAGE_VERSION) .
+	docker build --pull -t $(IMAGE_NAME):$(IMAGE_VERSION) .
 	docker tag $(IMAGE_NAME):$(IMAGE_VERSION) $(IMAGE_NAME):latest
 	docker tag $(IMAGE_NAME):$(IMAGE_VERSION) $(IMAGE_NAME):3
 
