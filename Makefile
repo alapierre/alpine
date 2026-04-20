@@ -1,5 +1,5 @@
 IMAGE_NAME=lapierre/alpine
-IMAGE_VERSION=3.23.3
+IMAGE_VERSION=3.23.4
 
 build:
 	docker build --pull -t $(IMAGE_NAME):$(IMAGE_VERSION) .
